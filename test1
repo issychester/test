@@ -11,9 +11,7 @@ and open the template in the editor.
         <link rel=stylesheet href=style.css>
     </head>
     <body>
-        <?php include("indexHeader.php")?>
-        <div class="centre">
-            <h1 class="centre"> Pets in Cambridge </h1>
+            <h1> Pets in Cambridge </h1>
             
             <form method="POST" action="login.php" name="form" class="centre">
                 <p>Please enter the text you want to analyse </p>
@@ -22,6 +20,5 @@ and open the template in the editor.
                 <input type="text" name="numberOfWords" pattern="[1-9]+" required><br><br>
                 <button type='submit' id="submit">Submit</button>
             </form>
-        </div>
     </body>
 </html>
