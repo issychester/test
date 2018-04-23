@@ -17,14 +17,11 @@ and open the template in the editor.
             
             <form method="POST" action="login.php" name="form" class="centre">
                 <p>Please enter the text you want to analyse </p>
-                <input type="text" name="text">
-                <p>Password</p>
-                <input type="password" name="password" required><br><br>
-                <button type='submit' id="submit">Sign-in</button>
+                <textarea cols='22' rows='5' name="text" required></textarea>
+                <p>Please enter the number of words you want analysed</p>
+                <input type="text" name="numberOfWords" pattern="[1-9]+" required><br><br>
+                <button type='submit' id="submit">Submit</button>
             </form>
-            
-            <p class="centre"><br> If you do not have an account <br><a href="createAccount.php">click here</a></p>
-            <p class="centre"><br> If you have forgotten your password <br> or username, <a href="forgotDetails.php">click here</a></p>
         </div>
     </body>
 </html>
