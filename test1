@@ -13,11 +13,11 @@ and open the template in the editor.
     <body>
             <h1> Pets in Cambridge </h1>
             
-            <form method="POST" action="login.php" name="form" class="centre">
-                <p>Please enter the text you want to analyse </p>
-                <textarea cols='22' rows='5' name="text" required></textarea>
-                <p>Please enter the number of words you want analysed</p>
-                <input type="text" name="numberOfWords" pattern="[1-9]+" required><br><br>
+            <form method="POST" action="analyse.php" name="form" class="centre">
+                <p>Please enter the title for your histogram </p>
+                <input type="text" name="title" required><br>
+                <p>Please select the number of variables you want included in your histogram</p>
+                <input type="text" name="numberOfVariables" pattern="[1-9]+" required><br><br>
                 <button type='submit' id="submit">Submit</button>
             </form>
     </body>
