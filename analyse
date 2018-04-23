@@ -1,3 +1,38 @@
+
+
 <?php
-echo 'test'
-?>
+// Get the inputs from login page
+$title = test_input($_POST["title"]);
+$numberOfVariables = test_inputs($_POST["numberOfVariables"]);
+
+for ($i = 0; $i < $numberOfVariables; $i++) {
+  echo "<form method="POST" action="analyseWords.php" name="form" class="centre">
+             <p>Please enter the title for your histogram </p>
+             <input type="text" name="title" required><br>
+             <p>Please select the number of variables you want included in your histogram</p>
+             <input type="text" name="numberOfVariables" pattern="[1-9]+" required><br><br>
+             <button type='submit' id="submit">Submit</button>
+        </form>
+  
+  <tr><td>".$row['concert_name']."</td><td>".$row['start_date']."</td><td>".$row['location_name']."</td><td>".$row['quantity']."</td><td><a href='concertID".$row['concert_ID'].".php'>More details</a></td></tr>"
+  print "$i squared is " . $i * $i . ".\n";
+} 
+
+if (!(mysqli_num_rows($result) == 0)) {
+    $message = "That region already exists, please <a href='newLocation.php'>click here</a> to go back to location page and select '$region' in the drop-down list.";
+}
+else {    
+    // Insert region into database
+    $enterUserSQL = "INSERT INTO `region` (`region_ID`, `region_name`) VALUES (NULL, '$region')";
+    
+    //Execute query and get the result
+    $result = mysqli_query($connection, $enterUserSQL);
+    
+    //Take user back to location page
+    $message = "Region is created! Please <a href='newLocation.php'>click here</a> to go back to location page and select '$region' in the drop-down list.";
+}
+
+mysqli_free_result($result);
+mysqli_close($connection);
+
+echo $message;
